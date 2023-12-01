@@ -1,0 +1,172 @@
+[gd_scene load_steps=22 format=3 uid="uid://blgedujicmsvv"]
+
+[ext_resource type="Script" path="res://scripts/character.gd" id="1_afyto"]
+[ext_resource type="Texture2D" uid="uid://dfyj6tvdiajte" path="res://assets/Sprout Lands - Sprites - Basic pack/Characters/Basic Charakter Spritesheet.png" id="2_3y6rv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_naphv"]
+size = Vector2(16, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1245h"]
+atlas = ExtResource("2_3y6rv")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xo2kr"]
+atlas = ExtResource("2_3y6rv")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mc7o8"]
+atlas = ExtResource("2_3y6rv")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8eyt2"]
+atlas = ExtResource("2_3y6rv")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5e1cr"]
+atlas = ExtResource("2_3y6rv")
+region = Rect2(0, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tnf5u"]
+atlas = ExtResource("2_3y6rv")
+region = Rect2(48, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4xak8"]
+atlas = ExtResource("2_3y6rv")
+region = Rect2(96, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l1lmj"]
+atlas = ExtResource("2_3y6rv")
+region = Rect2(144, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dipqt"]
+atlas = ExtResource("2_3y6rv")
+region = Rect2(0, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n2t8u"]
+atlas = ExtResource("2_3y6rv")
+region = Rect2(48, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vxjr5"]
+atlas = ExtResource("2_3y6rv")
+region = Rect2(96, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0qt7g"]
+atlas = ExtResource("2_3y6rv")
+region = Rect2(144, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ah68"]
+atlas = ExtResource("2_3y6rv")
+region = Rect2(0, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4fraf"]
+atlas = ExtResource("2_3y6rv")
+region = Rect2(48, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y15ow"]
+atlas = ExtResource("2_3y6rv")
+region = Rect2(96, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t68sd"]
+atlas = ExtResource("2_3y6rv")
+region = Rect2(144, 48, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ss26p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1245h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xo2kr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mc7o8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8eyt2")
+}],
+"loop": true,
+"name": &"walking_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5e1cr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tnf5u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4xak8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l1lmj")
+}],
+"loop": true,
+"name": &"walking_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dipqt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n2t8u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vxjr5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0qt7g")
+}],
+"loop": true,
+"name": &"walking_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ah68")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4fraf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y15ow")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t68sd")
+}],
+"loop": true,
+"name": &"walking_up",
+"speed": 5.0
+}]
+
+[sub_resource type="GDScript" id="GDScript_6ditl"]
+script/source = "extends AnimatedSprite2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+\"res://scenes/chicken.gd\"
+"
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_afyto")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_naphv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_ss26p")
+animation = &"walking_left"
+script = SubResource("GDScript_6ditl")
+
+[node name="Camera2D" type="Camera2D" parent="."]

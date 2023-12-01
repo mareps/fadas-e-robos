@@ -1,0 +1,72 @@
+[gd_scene load_steps=10 format=3 uid="uid://beu6fegaymkbg"]
+
+[ext_resource type="Texture2D" uid="uid://bp7ctkibu4m88" path="res://assets/Sprout Lands - Sprites - Basic pack/Characters/Free Chicken Sprites.png" id="1_a6e4o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_woq12"]
+atlas = ExtResource("1_a6e4o")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hrg8a"]
+atlas = ExtResource("1_a6e4o")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ehcqh"]
+atlas = ExtResource("1_a6e4o")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ubxet"]
+atlas = ExtResource("1_a6e4o")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7pgaj"]
+atlas = ExtResource("1_a6e4o")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7qpp0"]
+atlas = ExtResource("1_a6e4o")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q3nd4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_woq12")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hrg8a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ehcqh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ubxet")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7pgaj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7qpp0")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v0lwu"]
+
+[node name="Chicken" type="RigidBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_q3nd4")
+animation = &"walking"
+frame_progress = 0.479318
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_v0lwu")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
